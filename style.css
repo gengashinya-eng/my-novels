@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap');
+
+:root {
+  --bg: #0b0f14;
+  --card-bg: rgba(22, 29, 39, 0.7);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --accent: #d4af37;
+  --accent-glow: rgba(212, 175, 55, 0.15);
+  --text-main: #f1f5f9;
+  --text-sub: #94a3b8;
+  --tag-bg: rgba(255, 255, 255, 0.06);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg);
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(212, 175, 55, 0.08) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(56, 189, 248, 0.05) 0px, transparent 50%);
+  color: var(--text-main);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.container {
+  max-width: 1100px;
+  width: 100%;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.sub-title {
+  font-size: 0.85rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.novel-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 32px;
+}
+
+.novel-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  transition: all 0.35s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.novel-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(212, 175, 55, 0.3);
+  box-shadow: 0 20px 40px var(--accent-glow);
+}
+
+.cover-wrapper {
+  flex: 0 0 42%;
+  position: relative;
+  overflow: hidden;
+  min-height: 280px;
+}
+
+.cover-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.novel-card:hover .cover-img {
+  transform: scale(1.05);
+}
+
+.info-wrapper {
+  flex: 1;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.novel-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  margin-bottom: 12px;
+  color: #fff;
+}
+
+.novel-desc {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--text-sub);
+  margin-bottom: 16px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 24px;
+}
+
+.tag {
+  font-size: 0.75rem;
+  background: var(--tag-bg);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: #cbd5e1;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.read-btn {
+  display: inline-block;
+  text-align: center;
+  background: linear-gradient(135deg, #d4af37 0%, #aa820a 100%);
+  color: #0b0f14;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  padding: 10px 16px;
+  border-radius: 10px;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.read-btn:hover {
+  opacity: 0.92;
+  transform: scale(0.98);
+}
+
+@media (max-width: 650px) {
+  .novel-grid {
+    grid-template-columns: 1fr;
+  }
+  .novel-card {
+    flex-direction: column;
+  }
+  .cover-wrapper {
+    height: 260px;
+    flex: none;
+  }
+}
