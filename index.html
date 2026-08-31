@@ -68,7 +68,7 @@
 
     .novel-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
       gap: 32px;
     }
 
@@ -170,7 +170,10 @@
       transform: scale(0.98);
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 650px) {
+      .novel-grid {
+        grid-template-columns: 1fr;
+      }
       .novel-card {
         flex-direction: column;
       }
@@ -185,7 +188,7 @@
 
   <div class="container">
     <header>
-      <div class="sub-title">Personal Archive</div>
+      <div class="sub-title">zzZonZonzzz</div>
       <h1>Thư Viện</h1>
     </header>
 
@@ -193,8 +196,7 @@
       <!-- Truyện 1 -->
       <div class="novel-card">
         <div class="cover-wrapper">
-         
-          <img class="cover-img" src="bìa 1.png" onerror="this.src='https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&q=80'" alt="Bìa truyện 1" />
+          <img class="cover-img" src="bìa 1.png" alt="Bìa truyện 1" />
         </div>
         <div class="info-wrapper">
           <div>
@@ -216,7 +218,7 @@
       <!-- Truyện 2 -->
       <div class="novel-card">
         <div class="cover-wrapper">
-          <img class="cover-img" src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=600&q=80" alt="Bìa truyện 2" />
+          <img class="cover-img" src="bìa 1.png" alt="Bìa truyện 2" />
         </div>
         <div class="info-wrapper">
           <div>
